@@ -1,0 +1,35 @@
+<react-element
+	name="entry"
+	attributes="item editing"
+	onblur="{{commitAction}}">
+
+	<template>
+		<div class="view {{{completed: item.completed}}}"
+			hidden="{{editing || null}}"
+			ondblclick="{{editAction}}">
+			<input
+				type="checkbox"
+				class="toggle"
+				checked="{{item.completed}}"
+				onclick="{{itemChangeAction}}"/>
+			<label>{{item.title}}</label>
+			<button class="destroy" onclick="{{destroyAction}}"></button>
+		</div>
+		<input
+			is="td-input"
+			id="edit"
+			class="edit"
+			value="{{item.title}}"
+			hidden="{{!editing}}"
+			oncommit="{{commitAction}}"
+			oncancel="{{cancelAction}}"/>
+	</template>
+
+	<script type="text/javascript">
+
+	</script>
+
+	<style type="text/css">
+
+	</style>
+</react-element>
